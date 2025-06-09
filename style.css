@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Hand:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     margin: 0;
@@ -7,84 +7,129 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
+    background-color: #15212a;
 }
 
-#todoList {
-    width: 100vw;
+
+.todoList {
+    width: 800px;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
-    padding: 50px 0 0 0 ;
+    margin: 0 auto;
 }
 
 #cabecalho {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 500px;
+    padding: 50px 20px;
+    color: #feab8d;
 }
 
 #cabecalho h1 {
-    font-family: "Poppins", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 600;
-    font-size: 50px;
 }
 
-#contador {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
+#cabecalho p {
+    font-family: "Roboto", sans-serif;
     font-size: 20px;
+    font-weight: 900;
 }
 
-#task {
-    width: 1200px;
-}
-
-#container {
+.container-tarefas {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-#container input {
-    width: 1145px;
-    height: 50px;
+.container-tarefas input {
+    width: 90%;
+    font-size: 25px;
     border-radius: 16px;
+    border: none;
+    padding: 5px 0 5px 15px;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    font-weight: 400;
 }
 
-#addTask {
-    width: 50px;
-    height: 50px;
+.container-tarefas input:focus {
+    outline: none;
+    border: none;
+}
+
+.fa-plus {
+    color: #15212a;
+}
+
+#botaoAdd {
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
-    font-size: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border: none;
+    font-size: 20px;
+    background-color:#e76f51;
 }
 
-#lista {
-    margin-top: 50px;
+
+.tarefas {
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
 }
 
-.item {
+.lista {
     list-style: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+}
+/*--------------------------------------------------------------------------*/
+.linha {
     display: flex;
     align-items: center;
-    gap: 10px;
+    margin: 15px 0;
 }
 
-.item button {
+button {
     width: 35px;
     height: 35px;
     border-radius: 50%;
+    border: none;
 }
 
-.item p {
-    font-family: "Edu SA Hand", cursive;
-    font-size: 22px;
-    width: 1110px;
+.texto {
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    width: 100%;
+    padding: 5px 10px;
+    color: #f4c9a3;
 }
+
+.remover {
+    display: none;
+}
+
+.concluido {
+    background-color:#3ddc84;
+}
+
+.excluir {
+    background-color: #e63946;
+}
+
+.corIcones {
+    color: #15212a;
+}
+
+/* 
+cores
+
+#f4c9a3 fraca
+#feab8d mais suave
+#15212a fundo
+
+*/
