@@ -3,39 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TO-DO List</title>
+    <title>To-Do List</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="todoList">
-    <div id="cabecalho">
-        <h1>To-Do List</h1>
-        <p id="contador">0 / 0</p>
-    </div>
-
-    <div id="task">
-        <div id="container">
-            <input type="text" placeholder="Add your text">
-            <button id="addTask">+</button>
+    <div class="todoList">
+        <div id="cabecalho">
+            <h1>To-Do List</h1>
+            <p>0 / 0</p>
         </div>
 
-        <ul id="lista">
-            <li class="item">
-                <button id="check">
-                    <i class="fa-solid fa-check"></i>
-                </button>
-                <p>Item</p>
-                <button id="deletar">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </li>
-        </ul>
-    </div>
-</div>
+        <div class="container-tarefas">
+            <input type="text" placeholder="Adicione a tarefa" id="textoInput">
+            <button id="botaoAdd">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>        
 
-<script src="script.js"></script>
+        <div class="tarefas">
+            <ul class="listaDeTarefas">
+                <li class="linha remover" >
+                    <button class="concluido">
+                        <i class="fa-solid fa-check concluido corIcones"></i>
+                    </button>
+                    <p class="texto">siasdhiasuhdiashdas jdasih dais asi</p>
+                    <button class="excluir">
+                        <i class="fa-solid fa-trash excluir corIcones"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
     
 </body>
 </html>
