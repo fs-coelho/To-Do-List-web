@@ -58,6 +58,11 @@ body {
     border: none;
 }
 
+.textoInputClasse::placeholder {
+    color: #e63946;
+    opacity: 0.6;
+}
+
 .fa-plus {
     color: #15212a;
 }
@@ -86,7 +91,7 @@ body {
     display: flex;
     flex-direction: column;
 }
-/*--------------------------------------------------------------------------*/
+
 .linha {
     display: flex;
     align-items: center;
