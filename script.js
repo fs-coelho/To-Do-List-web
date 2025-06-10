@@ -6,11 +6,18 @@ botaoAdicionar.addEventListener("click", adicionar);
 
  //Pegando a lista
 let lista = document.querySelector(".listaDeTarefas");
-//lista.classList.add("lista");
+
+ //Pegando o contador
+let contador = document.getElementById("contador");
+let numero = 0;
+let numeroConcluido = 0;
 
 
  //Função para adicionar uma tarefa
 function adicionar () {
+
+    numero += 1;
+    contador.textContent = numeroConcluido.toString() + " / " + numero.toString();
     
     //pegando o input
     let elementoInput = document.getElementById("textoInput");
@@ -27,9 +34,11 @@ function adicionar () {
     //Verificação preenchimento do input
     if(elementoInput.value === "") {
         elementoInput.style.border = "2px solid #e63946";
+        elementoInput.classList.add("textoInputClasse");
         return;
     }else {
         elementoInput.style.border = "none";
+        elementoInput.classList.remove("textoInputClasse");
     }
 
     //Criando os botoes
@@ -49,23 +58,57 @@ function adicionar () {
     botaoCheck.appendChild(iconeCheck);
     botaoRemover.appendChild(iconeRemove);
 
-    //Adicionando evento ao botao
+    //Adicionando evento ao botao check
     botaoCheck.addEventListener("click", function() {
         if (botaoCheck.classList.contains("concluido")) {
             botaoCheck.classList.remove("concluido");
             iconeCheck.classList.remove("fa-solid", "fa-check");
+            tarefa.style.textDecoration = "none";
+            numeroConcluido -= 1;
+            contador.textContent = numeroConcluido.toString() + " / " + numero;
+            
         } else {
             botaoCheck.classList.add("concluido");
             iconeCheck.classList.add("fa-solid", "fa-check");
+            tarefa.style.textDecoration = "line-through";
+            numeroConcluido += 1;
+            contador.textContent = numeroConcluido.toString() + " / " + numero;
         }
     
     });
+    
+    //Adicionando evento a tag p
+    tarefa.addEventListener("click", function() {
+        if (tarefa.style.textDecoration === "line-through") {
+            botaoCheck.classList.remove("concluido");
+            iconeCheck.classList.remove("fa-solid", "fa-check");
+            tarefa.style.textDecoration = "none";
+            numeroConcluido -= 1;
+            contador.textContent = numeroConcluido.toString() + " / " + numero;
+        } else {
+            botaoCheck.classList.add("concluido");
+            iconeCheck.classList.add("fa-solid", "fa-check");
+            tarefa.style.textDecoration = "line-through";
+            numeroConcluido += 1;
+            contador.textContent = numeroConcluido.toString() + " / " + numero;
+        }
+        
+    });
+
     botaoRemover.addEventListener("click", function () {
         botaoRemover.classList.add("excluir");
         setTimeout( function () {
-            botaoRemover.parentElement.remove();
+            botaoRemover.parentElement.remove()
+            if (botaoCheck.classList.contains("concluido")){
+                numeroConcluido -= 1;
+                numero -= 1;
+                contador.textContent = numeroConcluido.toString() + " / " + numero;
+            } else {
+                numero -= 1;
+                contador.textContent = numeroConcluido.toString() + " / " + numero;
+            }
         }, 1000);// tempo para excluir----------------------------------------------------------------------------------------------------------------------------------
-    })
+    });
 
     //Criando a linha
     let linha = document.createElement("li");
@@ -82,3 +125,5 @@ function adicionar () {
     //Limpar o input
     elementoInput.value = "";
 }
+
+
